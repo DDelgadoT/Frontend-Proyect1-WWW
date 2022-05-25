@@ -1,0 +1,18 @@
+.div {
+    width: 90%;
+    margin: auto;
+    margin-top: 25px;
+  }
+  
+  .divBecas {
+    outline: solid;
+    width: 70%;
+    float: left;
+  }
+  
+  .divNoticias {
+    outline: solid;
+    width: 25%;
+    float: right;
+  }
+  
