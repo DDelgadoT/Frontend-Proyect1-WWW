@@ -1,12 +1,12 @@
 import './App.css';
-import DivBecas from './components/DivBecas/DivBecas';
+import Contenedores from './components/Contenedores/Contenedores';
 import Cabecera from './components/Navbar/Navbar';
 
 function App() {
   return (
     <div className="App">
       <Cabecera/>
-      <DivBecas/>
+      <Contenedores/>
     </div>
   );
 }

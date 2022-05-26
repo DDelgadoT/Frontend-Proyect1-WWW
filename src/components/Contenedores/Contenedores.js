@@ -3,11 +3,11 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
-import './DivBecas.css';
+import './Contenedores.css';
 
 import NoticiasLista from '../Noticias/NoticiasLista';
 
-function DivBecas(props){
+function Contenedores(props){
 
     return(
         <Container className="div">
@@ -31,4 +31,4 @@ function DivBecas(props){
     );
 }
 
-export default DivBecas;
+export default Contenedores;
