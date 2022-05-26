@@ -1,15 +1,19 @@
 import React from "react";
-import './Internacionales.css';
-import { Container, Col } from 'react-bootstrap';
+import './Registrar.css';
+import { Container } from 'react-bootstrap';
+import RegistroBecas from "../RegistroBecas/RegistroBecas";
 
-function Internacionales() {
+function Registrar() {
   return (
-    <div className="App">
-        <Container border="dark" className="border border-dark div">
-            <h1>Becas internacionales</h1>
-        </Container>
+    <div>
+      <div className="App">
+        <h1 className="title">Registro de becas</h1>
+      </div>
+      <Container fluid border="dark" className="border border-dark div">
+        <RegistroBecas/>
+      </Container>
     </div>
   );
 }
 
-export default Internacionales;
+export default Registrar;

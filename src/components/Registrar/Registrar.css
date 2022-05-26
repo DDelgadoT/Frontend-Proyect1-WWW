@@ -1,4 +1,11 @@
 .div {
-    margin-top: 25px;
+    margin-top: 2%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    max-width: 35%;
+}
+
+.title {
+    margin-top: 1%;
 }
   
