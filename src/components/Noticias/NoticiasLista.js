@@ -13,7 +13,11 @@ function NoticiasLista(){
     }, []);
 
     let listaNoticicas = noticias.slice(0,10).map(element => {
-        return (<Noticias key="element.title" title={element.title} abstract={element.abstract} url={element.url} src={element.multimedia[0].url} />);
+        return (<Noticias key="element.title" 
+        title={element.title} 
+        abstract={element.abstract} 
+        url={element.url} 
+        src={element.multimedia[0].url} />);
     });
 
     return(

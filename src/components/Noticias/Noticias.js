@@ -6,7 +6,7 @@ import './Noticias.css';
 function Noticias(props){
 
     return(
-        <Card className="space">
+        <Card border="dark" className="space">
             <Card.Img variant="top" src={props.src} />
             <Card.Body>
                 <Card.Title><a href={props.url}>{props.title}</a></Card.Title>

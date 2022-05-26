@@ -1,28 +1,21 @@
 import React from "react";
-import Container from 'react-bootstrap/Container';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
+import { Container, Row, Col } from 'react-bootstrap';
 
 import './Contenedores.css';
 
 import NoticiasLista from '../Noticias/NoticiasLista';
+import BecasLista from '../Becas/BecasLista';
 
 function Contenedores(props){
 
     return(
-        <Container className="div">
+        <Container border="dark" className="div">
             <Row>
-                <Col sm={8} className="divBecas">
-                    <p>Hola</p>
-                    <p>Hola</p>
-                    <p>Hola</p>
-                    <p>Hola</p>
-                    <p>Hola</p>
-                    <p>Hola</p>
-                    <p>Hola</p>
-                    <p>Hola</p>
+                <Col sm={8} className="border border-dark divBecas">
+                    <h1>Becas más populares</h1>
+                    
                 </Col>
-                <Col sm={4} className="divNoticias">
+                <Col sm={4} className="border border-dark">
                     <h1>Noticias recientes relacionadas a tecnología</h1>
                     <NoticiasLista />
                 </Col>
