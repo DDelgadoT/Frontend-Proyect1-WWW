@@ -6,22 +6,22 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Nacionales from "./components/Nacionales/Nacionales";
 import Internacionales from "./components/Internacionales/Internacionales";
+import Registrar from "./components/Registrar/Registrar";
 import Cabecera from './components/Navbar/Navbar';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
     <Router>
       <Cabecera />
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/nacionales" element={<Nacionales />} />
         <Route path="/internacionales" element={<Internacionales />} />
+        <Route path="/registro" element={<Registrar />} />
       </Routes>
     </Router>
-  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
