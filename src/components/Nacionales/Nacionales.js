@@ -1,12 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
 import './Nacionales.css';
-import { Container } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
+import { obtenerBecasNacionales } from "../Becas/obtenerBecas";
+import Becas from '../Becas/Becas';
 
 function Nacionales() {
+  const [becas, setBecas] = useState([]);
+
+  useEffect(() => {
+    obtenerBecasNacionales().then(setBecas);
+  }, []);
+
+  /*let listaBecas = becas.map(element => {
+      return (<Becas key="element.id" 
+      nombre={element.nombre} 
+      categoria={element.categoria} 
+      porcentaje={element.porcentajeF}
+      pais={element.pais}
+      fecha={element.updated_at}
+      />);
+  });*/
+
+  let listaBecas = "Hola";
+
   return (
     <div className="App">
         <Container border="dark" className="border border-dark div">
             <h1>Becas nacionales</h1>
+            <Row xs={1} md={2} className="g-4">
+                {listaBecas}
+            </Row>
         </Container>
     </div>
   );

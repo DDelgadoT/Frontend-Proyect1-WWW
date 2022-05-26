@@ -3,11 +3,7 @@
     margin-bottom: 5%;
 }
   
-.divBecas {
-  width: 65%;
-}
-  
 .divNoticias {
-  width: 35%;
+  max-height: 80%;
 }
   
