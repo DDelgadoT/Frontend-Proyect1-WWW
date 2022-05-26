@@ -1,20 +1,30 @@
 import React from "react";
-import Container from 'react-bootstrap/Container'
-import Col from 'react-bootstrap/Col'
-import Row from 'react-bootstrap/Row'
+import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
 import './DivBecas.css';
 
-import Noticias from '../Noticias/Noticias';
+import NoticiasLista from '../Noticias/NoticiasLista';
 
 function DivBecas(props){
 
     return(
         <Container className="div">
             <Row>
-                <Col sm={8} className="divBecas">Becas</Col>
+                <Col sm={8} className="divBecas">
+                    <p>Hola</p>
+                    <p>Hola</p>
+                    <p>Hola</p>
+                    <p>Hola</p>
+                    <p>Hola</p>
+                    <p>Hola</p>
+                    <p>Hola</p>
+                    <p>Hola</p>
+                </Col>
                 <Col sm={4} className="divNoticias">
-                    <Noticias />
+                    <h1>Noticias recientes relacionadas a tecnología</h1>
+                    <NoticiasLista />
                 </Col>
             </Row>
         </Container>
