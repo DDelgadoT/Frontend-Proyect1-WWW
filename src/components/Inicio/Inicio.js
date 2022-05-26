@@ -16,7 +16,7 @@ function Inicio(){
                     <BecasPopulares />
                 </Col>
                 <Col sm={4} className="border border-dark overflow divNoticias">
-                    <h1>Noticias recientes relacionadas a tecnología</h1>
+                    <h3>Noticias recientes relacionadas a tecnología</h3>
                     <NoticiasLista />
                 </Col>
             </Row>
