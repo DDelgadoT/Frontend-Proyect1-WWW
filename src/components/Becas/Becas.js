@@ -23,6 +23,7 @@ function Becas(props){
                     <ListGroupItem><b>Porcentaje de financiación: </b>{props.porcentaje}%</ListGroupItem>
                     <ListGroupItem><b>Fecha de publicación: </b>{fechaPublicacion}</ListGroupItem>
                     <ListGroupItem><b>Pais: </b>{props.pais}</ListGroupItem>
+                    <ListGroupItem><b>Universidad: </b>{props.universidad}</ListGroupItem>
                 </ListGroup>
                 <Card.Body>
                     <Button variant="primary">Detalles</Button>

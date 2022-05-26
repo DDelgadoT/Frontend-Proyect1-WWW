@@ -12,17 +12,18 @@ function Internacionales() {
     obtenerBecasInternacionales().then(setBecas);
   }, []);
 
-  /*let listaBecas = becas.map(element => {
+  console.log(becas);
+
+  let listaBecas = becas.map(element => {
       return (<Becas key="element.id" 
       nombre={element.nombre} 
       categoria={element.categoria} 
       porcentaje={element.porcentajeF}
       pais={element.pais}
+      universidad={element.universidad}
       fecha={element.updated_at}
       />);
-  });*/
-
-  let listaBecas = "Hola";
+  });
 
   return (
     <div className="App">
