@@ -6,13 +6,15 @@ import './NoticiasLista.css';
 
 function NoticiasLista(){
 
+    const cantidadNoticias = 7;
+
     const [noticias, setNoticias] = useState([]);
 
     useEffect(() => {
         obtenerNoticias().then(setNoticias);
     }, []);
 
-    let listaNoticicas = noticias.slice(0,10).map(element => {
+    let listaNoticicas = noticias.slice(0,cantidadNoticias).map(element => {
         return (<Noticias key="element.title" 
         title={element.title} 
         abstract={element.abstract} 

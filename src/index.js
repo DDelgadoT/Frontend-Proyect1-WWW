@@ -3,13 +3,24 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Nacionales from "./components/Nacionales/Nacionales";
+import Internacionales from "./components/Internacionales/Internacionales";
+import Cabecera from './components/Navbar/Navbar';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Cabecera />
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/nacionales" element={<Nacionales />} />
+        <Route path="/internacionales" element={<Internacionales />} />
+      </Routes>
+    </Router>
   </React.StrictMode>
 );
 

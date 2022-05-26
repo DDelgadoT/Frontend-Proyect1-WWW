@@ -7,7 +7,7 @@ function Noticias(props){
 
     return(
         <Card border="dark" className="space">
-            <Card.Img variant="top" src={props.src} />
+            <Card.Img variant="top" className="zoom" src={props.src} />
             <Card.Body>
                 <Card.Title><a href={props.url}>{props.title}</a></Card.Title>
                 <Card.Text>
