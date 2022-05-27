@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './RegistroBecas.css';
 import { Form, Button } from 'react-bootstrap';
 import PostBeca from './PostBeca';
@@ -13,7 +13,7 @@ function handleSubmit(event) {
     
     arrayRequisitos.forEach(element => {
         let requisitoTemporal = {}
-        if(element.charAt(0) == " "){
+        if(element.charAt(0) === " "){
             element = element.slice(1);
         }
         requisitoTemporal["descripcion"] = element;

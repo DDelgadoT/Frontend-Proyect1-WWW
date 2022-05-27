@@ -1,5 +1,4 @@
 import { API_URL } from '../url';
-import ModalConfirmacion from './ModalConfirmacion'
 
 export default function PostBeca(cuerpo){
     const requestOptions = {
