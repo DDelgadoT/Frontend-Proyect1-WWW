@@ -12,8 +12,6 @@ function Internacionales() {
     obtenerBecasInternacionales().then(setBecas);
   }, []);
 
-  console.log(becas);
-
   let listaBecas = becas.map(element => {
       return (<Becas key="element.id" 
       nombre={element.nombre} 
