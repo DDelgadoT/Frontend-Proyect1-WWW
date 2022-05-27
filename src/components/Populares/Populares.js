@@ -9,23 +9,30 @@ import BecasPopulares from '../Becas/BecasPopulares';
 
 function Populares(){
 
-    return(
-        <>  
-            <Cabecera />
-            <Container border="dark" className="div">
-                <Row>
-                    <Col sm={8} className="border border-dark">
-                        <h1>Becas más populares</h1>
-                        <BecasPopulares />
-                    </Col>
-                    <Col sm={4} className="border border-dark overflow divNoticias">
-                        <h3 className="titleNews">Noticias recientes relacionadas a tecnología</h3>
-                        <NoticiasLista />
-                    </Col>
-                </Row>
-            </Container>
-        </>
-    );
+    if(sessionStorage.getItem("token") != null){
+
+        return(
+            <>  
+                <Cabecera />
+                <Container border="dark" className="div">
+                    <Row>
+                        <Col sm={8} className="border border-dark">
+                            <h1>Becas más populares</h1>
+                            <BecasPopulares />
+                        </Col>
+                        <Col sm={4} className="border border-dark overflow divNoticias">
+                            <h3 className="titleNews">Noticias recientes relacionadas a tecnología</h3>
+                            <NoticiasLista />
+                        </Col>
+                    </Row>
+                </Container>
+            </>
+        );
+
+    }else{
+        alert("Debes ingresar");
+        window.location.replace("/");
+    }
 }
 
 export default Populares;

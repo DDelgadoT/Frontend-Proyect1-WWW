@@ -13,31 +13,38 @@ function Nacionales() {
     obtenerBecasNacionales().then(setBecas);
   }, []);
 
-  let listaBecas = becas.map(element => {
-      return (<Becas key="element.id" 
-      nombre={element.nombre} 
-      categoria={element.categoria} 
-      porcentaje={element.porcentajeF}
-      pais={element.pais}
-      universidad={element.universidad}
-      fecha={element.updated_at}
-      id={element.id}
-      />);
-  });
+  if(sessionStorage.getItem("token") != null){
 
-  return (
-    <>  
-      <Cabecera />
-      <div className="App">
-          <Container border="dark" className="border border-dark div">
-              <h1>Becas nacionales</h1>
-              <Row xs={1} md={2} className="g-4">
-                  {listaBecas}
-              </Row>
-          </Container>
-      </div>
-    </>
-  );
+    let listaBecas = becas.map(element => {
+        return (<Becas key="element.id" 
+        nombre={element.nombre} 
+        categoria={element.categoria} 
+        porcentaje={element.porcentajeF}
+        pais={element.pais}
+        universidad={element.universidad}
+        fecha={element.updated_at}
+        id={element.id}
+        />);
+    });
+
+    return (
+      <>  
+        <Cabecera />
+        <div className="App">
+            <Container border="dark" className="border border-dark div">
+                <h1>Becas nacionales</h1>
+                <Row xs={1} md={2} className="g-4">
+                    {listaBecas}
+                </Row>
+            </Container>
+        </div>
+      </>
+    );
+
+  }else{
+    alert("Debes ingresar");
+    window.location.replace("/");
+  }
 }
 
 export default Nacionales;

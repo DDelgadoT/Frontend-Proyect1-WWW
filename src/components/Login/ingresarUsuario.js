@@ -12,9 +12,9 @@ export default function ingresarUsuario(cuerpo){
         fetch(API_URL + "/User/login", requestOptions)
         .then(response => response.json())
         .then(data => {
-            if(typeof data !== "string"){
-            sessionStorage.setItem('token', data.token);
-            window.location.replace("/populares");
+            if(typeof data != "string"){
+                sessionStorage.setItem('token', data.token);
+                window.location.replace("/populares");
             }else{
                 alert("Datos incorrectos");
             }

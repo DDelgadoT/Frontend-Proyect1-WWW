@@ -1,9 +1,11 @@
 import { API_URL } from '../url' 
 
+let token = sessionStorage.getItem('token');
+
 let requestOptions = {
     method: 'GET',
     headers: {'Content-Type': 'application/json',
-        "Authorization": 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTM2ODM5ODMsImlhdCI6MTY1MzU5NzU4MywiaXNzIjoiRUxBRE1JTiJ9.dyq7U6EdKNGiRLLRludrxM9rbUbxBwDw_JT3d5osJfs'
+    "Authorization": 'Bearer ' + token
     }
 };
 
