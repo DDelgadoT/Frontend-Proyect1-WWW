@@ -3,7 +3,7 @@ import { API_URL } from '../url';
 let token = sessionStorage.getItem('token');
 
 export default function PostBeca(cuerpo){
-    const requestOptions = {
+    let requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json',
             "Authorization": 'Bearer ' + token
@@ -13,10 +13,10 @@ export default function PostBeca(cuerpo){
 
     try {
         fetch(API_URL + "/Beca", requestOptions)
-        .then(response => response.json())
-        .then(data => console.log(data));
-        alert("Registro exitoso");
-        window.location.replace("/populares")
+        .then(response => {
+            alert("Registro exitoso");
+            window.location.replace("/populares")
+        });       
     }catch(e){
         console.log(e);
     }
