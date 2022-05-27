@@ -3,6 +3,7 @@ import { Container, Col, Card, ListGroup, ListGroupItem, Button } from 'react-bo
 import './Detalles.css';
 import obtenerDetalles from './obtenerDetalles';
 import { API_URL } from '../url'
+import Cabecera from '../Navbar/Navbar';
 
 let id = window.location.href;
 id = id.replace("http://localhost:3000/",'');
@@ -52,6 +53,7 @@ function Detalles(){
 
     return(
         <>
+        <Cabecera />
             <div>
                 <h1 className="title">Detalles</h1>
             </div>
@@ -81,7 +83,7 @@ function Detalles(){
                         </Card.Body>
                         <Card.Footer className="text-muted">
                             <Button variant="danger" className="buttons" onClick={eliminar}>Eliminar</Button>
-                            <Button variant="primary" className="buttons">Editar</Button>
+                            <Button variant="primary" className="buttons" href={"editar/" + id}>Editar</Button>
                         </Card.Footer>
                     </Card>
                 </Col>
