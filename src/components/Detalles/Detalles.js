@@ -15,13 +15,16 @@ function eliminar(){
         }
     };
     
-    let opcion = confirm("¿Está seguro que desea eliminar la beca?");
+    var opcion = window.confirm("¿Está seguro que desea eliminar la beca?");
+    console.log(opcion);
 
     if(opcion == true) {
         fetch(API_URL + "/Beca/" + id, requestOptions)
         .then(response => response.json())
         .then(data => console.log(data))
-    }    
+    }
+
+    window.href("/populares");
 }
 
 function Detalles(){
@@ -42,10 +45,10 @@ function Detalles(){
 
     if (detalles.requisitos !== undefined){
         detalles.requisitos.forEach(element => {
-            requisitosLista.push(<p>{element.descripcion}</p>)
-    })}
-
-    console.log(requisitosLista);
+            requisitosLista.push(<p>{element.descripcion}</p>)})
+    }else{
+        requisitosLista.push("No hay requisitos");
+    }
 
     return(
         <div>
