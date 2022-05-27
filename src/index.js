@@ -11,6 +11,7 @@ import Internacionales from "./components/Internacionales/Internacionales";
 import RegistroBeca from "./components/RegistroBeca/RegistroBeca";
 import Detalles from './components/Detalles/Detalles';
 import Footer from './components/Footer/Footer';
+import EditarBeca from './components/EditarBeca/EditarBeca';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -18,13 +19,14 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <Router>
       <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/registrarse" element={<RegistroUsuario />} />
         <Route path="/:id" element={<Detalles />} />
         <Route path="/populares" element={<Populares />} />
         <Route path="/nacionales" element={<Nacionales />} /> 
         <Route path="/internacionales" element={<Internacionales />} />
         <Route path="/registroBeca" element={<RegistroBeca />} />
+        <Route path="/editar/:id" element={<EditarBeca />} />
+        <Route path="/registrarse" element={<RegistroUsuario />} />
+        <Route exact path="/" element={<App />} />
       </Routes>
       <Footer />
     </Router>
