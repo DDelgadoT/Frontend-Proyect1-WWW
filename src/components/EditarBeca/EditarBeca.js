@@ -56,11 +56,13 @@ function EditarBeca() {
         let fechaPublicacion = dia + "/" + mes + "/" + año;
 
         let valueSelect;
-        if(detalles.categoria == "Nacional"){
+        if(detalles.categoria === "Nacional"){
             valueSelect = "Nacional";
         }else{
             valueSelect = "Internacional";
-        }        
+        }
+
+        console.log(valueSelect);
 
         let requisitos = [];
         if (detalles.requisitos !== undefined){
@@ -88,7 +90,7 @@ function EditarBeca() {
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formCategoria">
                             <Form.Label>Categoría:</Form.Label>
-                            <Form.Select aria-label="Default select example" defaultValue={valueSelect}>
+                            <Form.Select aria-label="Default select example" value={valueSelect}>
                                 <option value="Nacional">Nacional</option>
                                 <option value="Internacional">Internacional</option>
                             </Form.Select>
