@@ -13,7 +13,7 @@ function Nacionales() {
     obtenerBecasNacionales().then(setBecas);
   }, []);
 
-  if(sessionStorage.getItem("key") == ""){
+  if(sessionStorage.getItem("key") != ""){
 
     let listaBecas = becas.map(element => {
         return (<Becas key="element.id" 

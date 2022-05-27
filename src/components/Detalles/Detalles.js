@@ -36,7 +36,7 @@ function Detalles(){
         obtenerDetalles(id).then(setDetalles)
     }, {});
 
-    if(sessionStorage.getItem("key") == ""){
+    if(sessionStorage.getItem("key") != ""){
 
         const fecha = new Date(detalles.updated_at);
         let año = fecha.getFullYear();
