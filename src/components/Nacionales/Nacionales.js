@@ -3,6 +3,7 @@ import './Nacionales.css';
 import { Container, Row } from 'react-bootstrap';
 import { obtenerBecasNacionales } from "../Becas/obtenerBecas";
 import Becas from '../Becas/Becas';
+import Cabecera from '../Navbar/Navbar';
 
 function Nacionales() {
 
@@ -25,14 +26,17 @@ function Nacionales() {
   });
 
   return (
-    <div className="App">
-        <Container border="dark" className="border border-dark div">
-            <h1>Becas nacionales</h1>
-            <Row xs={1} md={2} className="g-4">
-                {listaBecas}
-            </Row>
-        </Container>
-    </div>
+    <>  
+      <Cabecera />
+      <div className="App">
+          <Container border="dark" className="border border-dark div">
+              <h1>Becas nacionales</h1>
+              <Row xs={1} md={2} className="g-4">
+                  {listaBecas}
+              </Row>
+          </Container>
+      </div>
+    </>
   );
 }
 

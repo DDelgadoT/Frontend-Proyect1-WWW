@@ -21,10 +21,12 @@ function eliminar(){
     if(opcion == true) {
         fetch(API_URL + "/Beca/" + id, requestOptions)
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(data => {
+            window.location.replace("/populares");
+        })
     }
 
-    window.href("/populares");
+    ;
 }
 
 function Detalles(){
