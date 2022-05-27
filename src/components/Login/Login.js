@@ -27,12 +27,12 @@ function Login(){
             <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formCorreo">
                     <Form.Label>Correo electrónico</Form.Label>
-                    <Form.Control type="email" placeholder="Ingrese el correo electrónico" />
+                    <Form.Control type="email" placeholder="Ingrese el correo electrónico" required/>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formContraseña">
                     <Form.Label>Contraseña</Form.Label>
-                    <Form.Control type="password" placeholder="Ingrese la contraseña" />
+                    <Form.Control type="password" placeholder="Ingrese la contraseña" requireds/>
                 </Form.Group>
                 <Button variant="primary" type="submit">Ingresar</Button>                
             </Form>
