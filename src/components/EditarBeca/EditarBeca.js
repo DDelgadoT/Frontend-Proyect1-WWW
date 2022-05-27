@@ -48,77 +48,80 @@ function EditarBeca() {
         obtenerDetalles(id).then(setDetalles)
     }, {});
 
-    const fecha = new Date();
-    let año = fecha.getFullYear();
-    let mes = fecha.toLocaleString("es-US", {month: "long"});
-    let dia = fecha.toLocaleString("en-US", {day: "2-digit"});
-    let fechaPublicacion = dia + "/" + mes + "/" + año;
+    if(sessionStorage.getItem("key") == ""){
 
-    let valueSelect;
-    if(detalles.categoria == "Nacional"){
-        valueSelect = "Nacional";
+        const fecha = new Date();
+        let año = fecha.getFullYear();
+        let mes = fecha.toLocaleString("es-US", {month: "long"});
+        let dia = fecha.toLocaleString("en-US", {day: "2-digit"});
+        let fechaPublicacion = dia + "/" + mes + "/" + año;
+
+        if(detalles.categoria == "Nacional"){
+            let valueSelect = "Nacional";
+        }else{
+            let valueSelect = "Internacional";
+        }        
+
+        let requisitos = [];
+        if (detalles.requisitos !== undefined){
+            detalles.requisitos.forEach(element => {
+                requisitos.push(element.descripcion)
+            });
+        }else{
+            requisitos.push("No hay requisitos");
+        }
+        requisitos = requisitos.join(". ");
+
+        return (
+            <>
+            <Cabecera />
+                <div className="App">
+                    <h1 className="title">Edición de beca</h1>
+                </div>
+                <Container fluid border="dark" className="border border-dark div">      
+                    <Form onSubmit={handleSubmit}>
+                        <Form.Group className="mb-3" controlId="formFecha">
+                            <Form.Label>Fecha de actualización</Form.Label>
+                            <Form.Control type="text" placeholder={fechaPublicacion} readOnly /> 
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formNombreBeca">
+                            <Form.Label>Nombre de la beca</Form.Label>
+                            <Form.Control type="text" value={detalles.nombre} />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formCategoria">
+                            <Form.Label>Categoría:</Form.Label>
+                            <Form.Select aria-label="Default select example" value={valueSelect}>
+                                <option value="Nacional">Nacional</option>
+                                <option value="Internacional">Internacional</option>
+                            </Form.Select>
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formPorcentaje">
+                            <Form.Label>Porcentaje de financiación:</Form.Label>
+                            <Form.Control type="number" min="0" max="100" value={detalles.porcentajeF} />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formPais">
+                            <Form.Label>Pais que ofrece la beca:</Form.Label>
+                            <Form.Control type="text" value={detalles.pais} />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formUniversidad">
+                            <Form.Label>Universidad que ofrece la beca:</Form.Label>
+                            <Form.Control type="text" value={detalles.universidad} />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formRequisitos">
+                            <Form.Label>Requisitos: <b>(Separe los requisitos por puntos)</b></Form.Label>
+                            <Form.Control as="textarea" rows={3} value={requisitos}/>
+                        </Form.Group>
+                        <Button variant="primary" type="submit">
+                            Registrar
+                        </Button>
+                    </Form>
+                </Container>
+            </>
+        );
     }else{
-        valueSelect = "Internacional";
+        alert("Debes ingresar");
+        window.location.replace("/");
     }
-
-    
-
-    let requisitos = [];
-    if (detalles.requisitos !== undefined){
-        detalles.requisitos.forEach(element => {
-            requisitos.push(element.descripcion)
-        });
-    }else{
-        requisitos.push("No hay requisitos");
-    }
-    requisitos = requisitos.join(". ");
-
-    return (
-    <>
-    <Cabecera />
-        <div className="App">
-            <h1 className="title">Edición de beca</h1>
-        </div>
-        <Container fluid border="dark" className="border border-dark div">      
-            <Form onSubmit={handleSubmit}>
-                <Form.Group className="mb-3" controlId="formFecha">
-                    <Form.Label>Fecha de actualización</Form.Label>
-                    <Form.Control type="text" placeholder={fechaPublicacion} readOnly /> 
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formNombreBeca">
-                    <Form.Label>Nombre de la beca</Form.Label>
-                    <Form.Control type="text" value={detalles.nombre} />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formCategoria">
-                    <Form.Label>Categoría:</Form.Label>
-                    <Form.Select aria-label="Default select example" value={valueSelect}>
-                        <option value="Nacional">Nacional</option>
-                        <option value="Internacional">Internacional</option>
-                    </Form.Select>
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formPorcentaje">
-                    <Form.Label>Porcentaje de financiación:</Form.Label>
-                    <Form.Control type="number" min="0" max="100" value={detalles.porcentajeF} />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formPais">
-                    <Form.Label>Pais que ofrece la beca:</Form.Label>
-                    <Form.Control type="text" value={detalles.pais} />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formUniversidad">
-                    <Form.Label>Universidad que ofrece la beca:</Form.Label>
-                    <Form.Control type="text" value={detalles.universidad} />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formRequisitos">
-                    <Form.Label>Requisitos: <b>(Separe los requisitos por puntos)</b></Form.Label>
-                    <Form.Control as="textarea" rows={3} value={requisitos}/>
-                </Form.Group>
-                <Button variant="primary" type="submit">
-                    Registrar
-                </Button>
-            </Form>
-        </Container>
-    </>
-  );
 }
 
 export default EditarBeca;

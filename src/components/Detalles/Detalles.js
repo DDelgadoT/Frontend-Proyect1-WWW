@@ -36,60 +36,66 @@ function Detalles(){
         obtenerDetalles(id).then(setDetalles)
     }, {});
 
-    const fecha = new Date(detalles.updated_at);
-    let año = fecha.getFullYear();
-    let mes = fecha.toLocaleString("en-US", {month: "long"});
-    let dia = fecha.toLocaleString("en-US", {day: "2-digit"});
-    let fechaPublicacion = dia + "/" + mes + "/" + año;
+    if(sessionStorage.getItem("key") == ""){
 
-    let requisitosLista = [];
+        const fecha = new Date(detalles.updated_at);
+        let año = fecha.getFullYear();
+        let mes = fecha.toLocaleString("en-US", {month: "long"});
+        let dia = fecha.toLocaleString("en-US", {day: "2-digit"});
+        let fechaPublicacion = dia + "/" + mes + "/" + año;
 
-    if (detalles.requisitos !== undefined){
-        detalles.requisitos.forEach(element => {
-            requisitosLista.push(<p>{element.descripcion}</p>)})
+        let requisitosLista = [];
+
+        if (detalles.requisitos !== undefined){
+            detalles.requisitos.forEach(element => {
+                requisitosLista.push(<p>{element.descripcion}</p>)})
+        }else{
+            requisitosLista.push("No hay requisitos");
+        }
+
+        return(
+            <>
+            <Cabecera />
+                <div>
+                    <h1 className="title">Detalles</h1>
+                </div>
+                <Container fluid border="dark" className="border border-dark div">
+                    <Col>
+                        <Card border="dark">
+                            <Card.Body>
+                                <div className="titleDiv">
+                                    <span className="titleCard">{detalles.nombre}</span>
+                                </div>
+                                <Card.Text>
+                                    {detalles.abstract}
+                                </Card.Text>
+                            </Card.Body>
+                            <ListGroup className="list-group-flush">
+                                <ListGroupItem><b>Categoria: </b>{detalles.categoria}</ListGroupItem>
+                                <ListGroupItem><b>Porcentaje de financiación: </b>{detalles.porcentajeF}%</ListGroupItem>
+                                <ListGroupItem><b>Fecha de publicación: </b>{fechaPublicacion}</ListGroupItem>
+                                <ListGroupItem><b>Pais: </b>{detalles.pais}</ListGroupItem>
+                                <ListGroupItem><b>Universidad: </b>{detalles.universidad}</ListGroupItem>
+                            </ListGroup>
+                            <Card.Body>
+                                <Card.Text>
+                                    <Card.Title>Requerimientos</Card.Title>
+                                    {requisitosLista}
+                                </Card.Text>
+                            </Card.Body>
+                            <Card.Footer className="text-muted">
+                                <Button variant="danger" className="buttons" onClick={eliminar}>Eliminar</Button>
+                                <Button variant="primary" className="buttons" href={"editar/" + id}>Editar</Button>
+                            </Card.Footer>
+                        </Card>
+                    </Col>
+                </Container>
+            </>
+        );
     }else{
-        requisitosLista.push("No hay requisitos");
+        alert("Debes ingresar");
+        window.location.replace("/");
     }
-
-    return(
-        <>
-        <Cabecera />
-            <div>
-                <h1 className="title">Detalles</h1>
-            </div>
-            <Container fluid border="dark" className="border border-dark div">
-                <Col>
-                    <Card border="dark">
-                        <Card.Body>
-                            <div className="titleDiv">
-                                <span className="titleCard">{detalles.nombre}</span>
-                            </div>
-                            <Card.Text>
-                                {detalles.abstract}
-                            </Card.Text>
-                        </Card.Body>
-                        <ListGroup className="list-group-flush">
-                            <ListGroupItem><b>Categoria: </b>{detalles.categoria}</ListGroupItem>
-                            <ListGroupItem><b>Porcentaje de financiación: </b>{detalles.porcentajeF}%</ListGroupItem>
-                            <ListGroupItem><b>Fecha de publicación: </b>{fechaPublicacion}</ListGroupItem>
-                            <ListGroupItem><b>Pais: </b>{detalles.pais}</ListGroupItem>
-                            <ListGroupItem><b>Universidad: </b>{detalles.universidad}</ListGroupItem>
-                        </ListGroup>
-                        <Card.Body>
-                            <Card.Text>
-                                <Card.Title>Requerimientos</Card.Title>
-                                {requisitosLista}
-                            </Card.Text>
-                        </Card.Body>
-                        <Card.Footer className="text-muted">
-                            <Button variant="danger" className="buttons" onClick={eliminar}>Eliminar</Button>
-                            <Button variant="primary" className="buttons" href={"editar/" + id}>Editar</Button>
-                        </Card.Footer>
-                    </Card>
-                </Col>
-            </Container>
-        </>
-    );
 }
 
 export default Detalles;
