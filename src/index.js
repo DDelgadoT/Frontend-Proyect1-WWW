@@ -1,28 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import App from './App';
+import RegistroUsuario from './components/RegistroUsuario/RegistroUsuario';
+import Populares from "./components/Populares/Populares";
 import Nacionales from "./components/Nacionales/Nacionales";
 import Internacionales from "./components/Internacionales/Internacionales";
-import Registrar from "./components/Registrar/Registrar";
-import Cabecera from './components/Navbar/Navbar';
+import RegistroBeca from "./components/RegistroBeca/RegistroBeca";
 import Detalles from './components/Detalles/Detalles';
+import Footer from './components/Footer/Footer';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <Router>
-      <Cabecera />
       <Routes>
         <Route path="/" element={<App />} />
+        <Route path="/registrarse" element={<RegistroUsuario />} />
         <Route path="/:id" element={<Detalles />} />
+        <Route path="/populares" element={<Populares />} />
         <Route path="/nacionales" element={<Nacionales />} /> 
         <Route path="/internacionales" element={<Internacionales />} />
-        <Route path="/registro" element={<Registrar />} />
+        <Route path="/registroBeca" element={<RegistroBeca />} />
       </Routes>
+      <Footer />
     </Router>
 );
 
