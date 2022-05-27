@@ -6,7 +6,7 @@ import Cabecera from '../Navbar/Navbar';
 
 function RegistroBeca() {
 
-  if(sessionStorage.getItem("key") == ""){
+  if(sessionStorage.getItem("token") == ""){
 
     return (
       <>
@@ -19,7 +19,7 @@ function RegistroBeca() {
         </Container>
       </>
     );
-    
+
   }else{
     alert("Debes ingresar");
     window.location.replace("/");

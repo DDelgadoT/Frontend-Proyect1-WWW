@@ -9,7 +9,7 @@ import BecasPopulares from '../Becas/BecasPopulares';
 
 function Populares(){
 
-    if(sessionStorage.getItem("key") != ""){
+    if(sessionStorage.getItem("token") != null){
 
         return(
             <>  
