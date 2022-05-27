@@ -41,7 +41,7 @@ function RegistroBecas() {
     let fechaPublicacion = dia + "/" + mes + "/" + año;
 
   return (
-    <div>
+    <>
         <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formFecha">
                 <Form.Label>Fecha de creación</Form.Label>
@@ -71,14 +71,14 @@ function RegistroBecas() {
                 <Form.Control type="text" placeholder="Nombre de la universidad" />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formRequisitos">
-                <Form.Label>Requerimientos:</Form.Label>
+                <Form.Label>Requisitos: <b>(Separe los requisitos por puntos)</b></Form.Label>
                 <Form.Control as="textarea" rows={3} />
             </Form.Group>
             <Button variant="primary" type="submit">
                 Registrar
             </Button>
         </Form>
-    </div>
+    </>
   );
 }
 
