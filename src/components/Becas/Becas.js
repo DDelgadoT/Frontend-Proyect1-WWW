@@ -9,6 +9,8 @@ function Becas(props){
     let dia = fecha.toLocaleString("en-US", {day: "2-digit"});
     let fechaPublicacion = dia + "/" + mes + "/" + año;
 
+    let id = props.id;
+
     return(
         <Col>
             <Card border="dark" className="space">
@@ -26,7 +28,7 @@ function Becas(props){
                     <ListGroupItem><b>Universidad: </b>{props.universidad}</ListGroupItem>
                 </ListGroup>
                 <Card.Body>
-                    <Button variant="primary">Detalles</Button>
+                    <Button variant="primary" href={id}>Detalles</Button>
                 </Card.Body>
             </Card>
         </Col>
