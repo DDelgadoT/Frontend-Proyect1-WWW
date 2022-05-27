@@ -20,6 +20,7 @@ function Internacionales() {
       pais={element.pais}
       universidad={element.universidad}
       fecha={element.updated_at}
+      id={element.id}
       />);
   });
 
