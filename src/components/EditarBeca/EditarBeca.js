@@ -56,10 +56,11 @@ function EditarBeca() {
         let dia = fecha.toLocaleString("en-US", {day: "2-digit"});
         let fechaPublicacion = dia + "/" + mes + "/" + año;
 
+        let valueSelect;
         if(detalles.categoria == "Nacional"){
-            let valueSelect = "Nacional";
+            valueSelect = "Nacional";
         }else{
-            let valueSelect = "Internacional";
+            valueSelect = "Internacional";
         }        
 
         let requisitos = [];
