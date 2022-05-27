@@ -56,10 +56,12 @@ function EditarBeca() {
 
     let valueSelect;
     if(detalles.categoria == "Nacional"){
-        valueSelect = 1;
+        valueSelect = "Nacional";
     }else{
-        valueSelect = 2;
+        valueSelect = "Internacional";
     }
+
+    
 
     let requisitos = [];
     if (detalles.requisitos !== undefined){
@@ -78,7 +80,7 @@ function EditarBeca() {
             <h1 className="title">Edición de beca</h1>
         </div>
         <Container fluid border="dark" className="border border-dark div">      
-            <Form id="form" onSubmit={handleSubmit}>
+            <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formFecha">
                     <Form.Label>Fecha de actualización</Form.Label>
                     <Form.Control type="text" placeholder={fechaPublicacion} readOnly /> 
