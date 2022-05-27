@@ -5,5 +5,13 @@
   
 .divNoticias {
   max-height: 80%;
+  background-color: gray;
+}
+
+.titleNews {
+  margin-right: 4%;
+  margin-left: 4%;
+  margin-top: 4%;
+  color: white;
 }
   
