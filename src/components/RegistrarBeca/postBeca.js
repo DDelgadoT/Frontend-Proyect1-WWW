@@ -1,10 +1,12 @@
 import { API_URL } from '../url';
 
+let token = sessionStorage.getItem('token');
+
 export default function PostBeca(cuerpo){
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json',
-            "Authorization": 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTM2ODM5ODMsImlhdCI6MTY1MzU5NzU4MywiaXNzIjoiRUxBRE1JTiJ9.dyq7U6EdKNGiRLLRludrxM9rbUbxBwDw_JT3d5osJfs'
+            "Authorization": 'Bearer ' + token
         },
         body: JSON.stringify(cuerpo)
     };
@@ -14,6 +16,7 @@ export default function PostBeca(cuerpo){
         .then(response => response.json())
         .then(data => console.log(data));
         alert("Registro exitoso");
+        window.location.replace("/populares")
     }catch(e){
         console.log(e);
     }
