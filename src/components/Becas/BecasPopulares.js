@@ -34,4 +34,4 @@ function BecasPopulares(){
     );
 }
 
-export default BecasPopulares   ;
+export default BecasPopulares;

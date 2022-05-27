@@ -8,7 +8,7 @@ function Becas(props){
     let mes = fecha.toLocaleString("en-US", {month: "long"});
     let dia = fecha.toLocaleString("en-US", {day: "2-digit"});
     let fechaPublicacion = dia + "/" + mes + "/" + año;
-
+    
     let id = props.id;
 
     return(

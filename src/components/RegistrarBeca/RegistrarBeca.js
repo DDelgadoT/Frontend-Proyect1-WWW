@@ -4,6 +4,10 @@ import postBeca from './postBeca';
 
 import './RegistrarBeca.css';
 
+function cleanFormAfterSubmit(){
+    console.log("Hola");
+}
+
 function handleSubmit(event) {
     event.preventDefault()
 
@@ -31,6 +35,7 @@ function handleSubmit(event) {
     }
 
     postBeca(body);
+    
 }
 
 function RegistrarBeca() {
@@ -43,7 +48,7 @@ function RegistrarBeca() {
 
   return (
     <>
-        <Form onSubmit={handleSubmit}>
+        <Form id="form" onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formFecha">
                 <Form.Label>Fecha de creación</Form.Label>
                 <Form.Control type="text" placeholder={fechaPublicacion} readOnly />
@@ -75,9 +80,7 @@ function RegistrarBeca() {
                 <Form.Label>Requisitos: <b>(Separe los requisitos por puntos)</b></Form.Label>
                 <Form.Control as="textarea" rows={3} />
             </Form.Group>
-            <Button variant="primary" type="submit">
-                Registrar
-            </Button>
+            <Button variant="primary" type="submit">Registrar</Button>
         </Form>
     </>
   );
