@@ -32,11 +32,10 @@ function handleSubmit(event) {
         porcentajeF: parseInt(event.target.elements.formPorcentaje.value),
         pais: event.target.elements.formPais.value,
         universidad: event.target.elements.formUniversidad.value,
-        requisitos: requisitos,
-        updated_at: new Date(event.target.elements.formFecha.value)
+        requisitos: requisitos
     }
 
-    putBeca(body);
+    putBeca(body, id);
     
 }
 
@@ -68,8 +67,6 @@ function EditarBeca() {
             detalles.requisitos.forEach(element => {
                 requisitos.push(element.descripcion)
             });
-        }else{
-            requisitos.push("No hay requisitos");
         }
         requisitos = requisitos.join(". ");
 
@@ -112,9 +109,7 @@ function EditarBeca() {
                             <Form.Label>Requisitos: <b>(Separe los requisitos por puntos)</b></Form.Label>
                             <Form.Control as="textarea" rows={3} defaultValue={requisitos}/>
                         </Form.Group>
-                        <Button variant="primary" type="submit">
-                            Registrar
-                        </Button>
+                        <Button variant="primary" type="submit">Actualizar</Button>
                     </Form>
                 </Container>
             </>
