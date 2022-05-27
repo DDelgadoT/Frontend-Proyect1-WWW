@@ -8,6 +8,7 @@ import Nacionales from "./components/Nacionales/Nacionales";
 import Internacionales from "./components/Internacionales/Internacionales";
 import Registrar from "./components/Registrar/Registrar";
 import Cabecera from './components/Navbar/Navbar';
+import Detalles from './components/Detalles/Detalles';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -17,7 +18,8 @@ root.render(
       <Cabecera />
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/nacionales" element={<Nacionales />} />
+        <Route path="/:id" element={<Detalles />} />
+        <Route path="/nacionales" element={<Nacionales />} /> 
         <Route path="/internacionales" element={<Internacionales />} />
         <Route path="/registro" element={<Registrar />} />
       </Routes>
