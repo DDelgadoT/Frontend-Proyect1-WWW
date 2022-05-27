@@ -1,7 +1,8 @@
 import React from 'react';
-import './RegistroBecas.css';
 import { Form, Button } from 'react-bootstrap';
-import PostBeca from './PostBeca';
+import postBeca from './postBeca';
+
+import './RegistrarBeca.css';
 
 function handleSubmit(event) {
     event.preventDefault()
@@ -29,10 +30,10 @@ function handleSubmit(event) {
         requisitos: requisitos
     }
 
-    PostBeca(body);
+    postBeca(body);
 }
 
-function RegistroBecas() {
+function RegistrarBeca() {
 
     const fecha = new Date();
     let año = fecha.getFullYear();
@@ -82,4 +83,4 @@ function RegistroBecas() {
   );
 }
 
-export default RegistroBecas;
+export default RegistrarBeca;

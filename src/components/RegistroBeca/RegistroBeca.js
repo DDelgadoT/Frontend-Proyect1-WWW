@@ -1,19 +1,21 @@
 import React from "react";
-import './Registrar.css';
+import './RegistroBeca.css';
 import { Container } from 'react-bootstrap';
-import RegistroBecas from "../RegistroBecas/RegistroBecas";
+import RegistrarBeca from "../RegistrarBeca/RegistrarBeca";
+import Cabecera from '../Navbar/Navbar';
 
-function Registrar() {
+function RegistroBeca() {
   return (
-    <div>
+    <>
+      <Cabecera />
       <div className="App">
         <h1 className="title">Registro de becas</h1>
       </div>
       <Container fluid border="dark" className="border border-dark div">
-        <RegistroBecas/>
+        <RegistrarBeca/>
       </Container>
-    </div>
+    </>
   );
 }
 
-export default Registrar;
+export default RegistroBeca;
