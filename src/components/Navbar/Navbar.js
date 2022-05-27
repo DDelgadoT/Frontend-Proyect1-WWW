@@ -3,6 +3,10 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 
 import './Navbar.css';
 
+function cerrarSesion(){
+    console.log("Hola");
+}
+
 export function CabeceraLogin(){
 
     return(
@@ -12,7 +16,7 @@ export function CabeceraLogin(){
                 <Nav className="me-auto">
                     <Navbar.Collapse className="justify-content-end">
                         <Nav.Link href="/">Ingresar</Nav.Link>
-                        <Nav.Link href="/registrar">Registrarse</Nav.Link>
+                        <Nav.Link href="/registrarse">Registrarse</Nav.Link>
                     </Navbar.Collapse>
                 </Nav>
             </Container>
@@ -32,6 +36,11 @@ function Cabecera(){
                     <Nav.Link href="/nacionales">Becas nacionales</Nav.Link>
                     <Nav.Link href="/registroBeca">Registrar beca</Nav.Link>
                 </Nav>
+                <Navbar.Collapse className="justify-content-end">
+                    <Navbar.Text>
+                        <a href="/" onclick={cerrarSesion}>Cerrar sesión</a>
+                    </Navbar.Text>
+                </Navbar.Collapse>
             </Container>
         </Navbar>
     );
