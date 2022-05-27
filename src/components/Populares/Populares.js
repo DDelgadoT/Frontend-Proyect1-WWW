@@ -1,12 +1,12 @@
 import React from "react";
 import { Container, Row, Col } from 'react-bootstrap';
 
-import './Inicio.css';
+import './Populares.css';
 
 import NoticiasLista from '../Noticias/NoticiasLista';
 import BecasPopulares from '../Becas/BecasPopulares';
 
-function Inicio(){
+function Populares(){
 
     return(
         <Container border="dark" className="div">
@@ -24,4 +24,4 @@ function Inicio(){
     );
 }
 
-export default Inicio;
+export default Populares;

@@ -1,11 +1,13 @@
 .div {
     margin-top: 5%;
-    margin-bottom: 5%;
+    margin-bottom: 5%;    
 }
   
 .divNoticias {
   max-height: 80%;
   background-color: gray;
+  overflow-y: auto;
+  max-height: 135vh;
 }
 
 .titleNews {
