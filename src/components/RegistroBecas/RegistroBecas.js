@@ -43,7 +43,7 @@ function RegistroBecas() {
   return (
     <>
         <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3" controlId="formFecha">
+            <Form.Group className="mb-3" controlId="formFecha">
                 <Form.Label>Fecha de creación</Form.Label>
                 <Form.Control type="text" placeholder={fechaPublicacion} readOnly />
             </Form.Group>
