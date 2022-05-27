@@ -51,15 +51,17 @@ function Detalles(){
     }
 
     return(
-        <div>
-            <div className="App">
+        <>
+            <div>
                 <h1 className="title">Detalles</h1>
             </div>
             <Container fluid border="dark" className="border border-dark div">
                 <Col>
                     <Card border="dark">
                         <Card.Body>
-                            <Card.Title>{detalles.nombre}</Card.Title>
+                            <div className="titleDiv">
+                                <span className="titleCard">{detalles.nombre}</span>
+                            </div>
                             <Card.Text>
                                 {detalles.abstract}
                             </Card.Text>
@@ -84,7 +86,7 @@ function Detalles(){
                     </Card>
                 </Col>
             </Container>
-        </div>
+        </>
     );
 }
 
