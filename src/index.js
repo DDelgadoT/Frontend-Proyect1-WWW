@@ -25,7 +25,7 @@ root.render(
         <Route path="/internacionales" element={<Internacionales />} />
         <Route path="/registroBeca" element={<RegistroBeca />} />
         <Route path="/editar/:id" element={<EditarBeca />} />
-        <Route path="/registrarse" element={<RegistroUsuario />} />
+        <Route exaxt path="/registrarse" element={<RegistroUsuario />} />
         <Route exact path="/" element={<App />} />
       </Routes>
       <Footer />
