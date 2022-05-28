@@ -26,7 +26,7 @@ root.render(
         <Route path="/registroBeca" element={<RegistroBeca />} />
         <Route path="/editar/:id" element={<EditarBeca />} />
         <Route path="/registrarse" element={<RegistroUsuario />} />
-        <Route exact path="/Frontend-Proyect1-WWW/" element={<App />} />
+        <Route exact path="/" element={<App />} />
       </Routes>
       <Footer />
     </Router>
