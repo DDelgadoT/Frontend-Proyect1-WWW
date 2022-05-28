@@ -17,7 +17,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router >
       <Routes>
         <Route path="/:id" element={<Detalles />} />
         <Route path="/populares" element={<Populares />} />
