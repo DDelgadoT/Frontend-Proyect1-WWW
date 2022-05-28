@@ -14,7 +14,7 @@ export default function ingresarUsuario(cuerpo){
         .then(data => {
             if(typeof data != "string"){
                 sessionStorage.setItem('token', data.token);
-                window.location.replace("/Frontend-Proyect1-WWW/populares");
+                window.location.replace("/populares");
             }else{
                 alert("Datos incorrectos");
             }
