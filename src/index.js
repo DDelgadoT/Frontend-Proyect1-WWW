@@ -2,23 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-//import { HashRouter as Router, Route, Routes } from "react-router-dom";
-import { HashRouter as Router} from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import App from './App';
-/*import RegistroUsuario from './components/RegistroUsuario/RegistroUsuario';
+import RegistroUsuario from './components/RegistroUsuario/RegistroUsuario';
 import Populares from "./components/Populares/Populares";
 import Nacionales from "./components/Nacionales/Nacionales";
 import Internacionales from "./components/Internacionales/Internacionales";
 import RegistroBeca from "./components/RegistroBeca/RegistroBeca";
-import Detalles from './components/Detalles/Detalles';*/
+import Detalles from './components/Detalles/Detalles';
 import Footer from './components/Footer/Footer';
-//import EditarBeca from './components/EditarBeca/EditarBeca';
+import EditarBeca from './components/EditarBeca/EditarBeca';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    /*<Router>
+    <Router>
       <Routes>
         <Route path="/:id" element={<Detalles />} />
         <Route path="/populares" element={<Populares />} />
@@ -26,13 +25,11 @@ root.render(
         <Route path="/internacionales" element={<Internacionales />} />
         <Route path="/registroBeca" element={<RegistroBeca />} />
         <Route path="/editar/:id" element={<EditarBeca />} />
-        <Route path="/registrarse" element={<RegistroUsuario />} />
+        <Route path="/registrarse" component={<RegistroUsuario />} />
         <Route exact path="/" element={<App />} />
       </Routes>
-      <Footer />*/
-    <Router>
-      <App />
       <Footer />
+    
     </Router>
 );
 
