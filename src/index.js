@@ -19,14 +19,14 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <Router >
       <Routes>
-        <Route path="/:id" element={<Detalles />} />
-        <Route path="/populares" element={<Populares />} />
-        <Route path="/nacionales" element={<Nacionales />} /> 
-        <Route path="/internacionales" element={<Internacionales />} />
-        <Route path="/registroBeca" element={<RegistroBeca />} />
-        <Route path="/editar/:id" element={<EditarBeca />} />
-        <Route exaxt path="/registrarse" element={<RegistroUsuario />} />
-        <Route exact path="/" element={<App />} />
+        <Route path="/Frontend-Proyect1-WWW/:id" element={<Detalles />} />
+        <Route path="/Frontend-Proyect1-WWW/populares" element={<Populares />} />
+        <Route path="/Frontend-Proyect1-WWW/nacionales" element={<Nacionales />} /> 
+        <Route path="/Frontend-Proyect1-WWW/internacionales" element={<Internacionales />} />
+        <Route path="/Frontend-Proyect1-WWW/registroBeca" element={<RegistroBeca />} />
+        <Route path="/Frontend-Proyect1-WWW/editar/:id" element={<EditarBeca />} />
+        <Route path="Frontend-Proyect1-WWW/registrarse" element={<RegistroUsuario />} />
+        <Route exact path="/Frontend-Proyect1-WWW/" element={<App />} />
       </Routes>
       <Footer />
     

@@ -16,8 +16,8 @@ export function CabeceraLogin(){
             <Navbar.Brand>Becas.com</Navbar.Brand>
                 <Nav className="me-auto">
                     <Navbar.Collapse className="justify-content-end">
-                        <Nav.Link href="/">Ingresar</Nav.Link>
-                        <Nav.Link href="/registrarse">Registrarse</Nav.Link>
+                        <Nav.Link href="/Frontend-Proyect1-WWW/">Ingresar</Nav.Link>
+                        <Nav.Link href="/Frontend-Proyect1-WWW/registrarse">Registrarse</Nav.Link>
                     </Navbar.Collapse>
                 </Nav>
             </Container>
@@ -32,10 +32,10 @@ function Cabecera(){
             <Container>
             <Navbar.Brand href="/populares">Becas.com</Navbar.Brand>
                 <Nav className="me-auto">
-                    <Nav.Link href="/populares">Becas populares</Nav.Link>
-                    <Nav.Link href="/internacionales">Becas internacionales</Nav.Link>
-                    <Nav.Link href="/nacionales">Becas nacionales</Nav.Link>
-                    <Nav.Link href="/registroBeca">Registrar beca</Nav.Link>
+                    <Nav.Link href="/Frontend-Proyect1-WWW/populares">Becas populares</Nav.Link>
+                    <Nav.Link href="/Frontend-Proyect1-WWW/internacionales">Becas internacionales</Nav.Link>
+                    <Nav.Link href="/Frontend-Proyect1-WWW/nacionales">Becas nacionales</Nav.Link>
+                    <Nav.Link href="/Frontend-Proyect1-WWW/registroBeca">Registrar beca</Nav.Link>
                 </Nav>
                 <Navbar.Collapse className="justify-content-end">
                     <Navbar.Text>
