@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import { Hashrouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import App from './App';
 import RegistroUsuario from './components/RegistroUsuario/RegistroUsuario';
 import Populares from "./components/Populares/Populares";
